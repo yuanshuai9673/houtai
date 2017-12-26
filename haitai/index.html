@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/iconfont.css">
+    <script src="js/iconfont.js"></script>
+    <script src="js/vue.js"></script>
+    <script src="js/vue-router.js"></script>
+    <script src="js/riqi.js"></script>
+</head>
+<body>
+<div id="app">
+    <div class="box">
+        <div class="le">
+            <div class="title"><i class="iconfont icon-icon3"></i>后台管理系统</div>
+            <router-link to="/home" class="nav"><i class="iconfont icon-shouye add"></i>主页</router-link>
+            <router-link to="/add" class="nav"><i class="iconfont icon-renyuantianjia add"></i>人员添加</router-link>
+            <router-link to="/manage" class="nav"><i class="iconfont icon-renyuanguanli add"></i>人员管理</router-link>
+            <router-link to="/sign" class="nav"><i class="iconfont icon-qiandao add"></i>签到</router-link>
+            <router-link to="/check" class="nav"><i class="iconfont icon-icon-test add"></i>考勤管理</router-link>
+            <router-link to="/notice" class="nav"><i class="iconfont icon-gonggao add"></i>公告</router-link>
+            <router-link to="/set" class="nav"><i class="iconfont icon-xitongshezhi add"></i>系统设置</router-link>
+            <table>
+                <tr>
+                    <td height="50" class="td">
+                        <div id="webjx"></div>
+
+                    </td>
+                </tr>
+
+            </table>
+        </div>
+
+    <div class="content">
+        <router-view></router-view>
+    </div>
+    </div>
+</div>
+
+<!--首页内容-->
+<template id="home">
+  <div>
+<h3>首页</h3>
+  </div>
+</template>
+
+<!--人员添加-->
+<template id="add">
+    <div class="dd">
+       <header>基本信息</header>
+        <div class="message">
+            <span>姓名：</span> <input type="text" class="style" id="name"><br>
+            <span> 性别：</span><input type="radio" checked name="sex" id="man"><label for="man">男</label>
+            <input type="radio" checked name="sex" id="ms"><label for="ms">女</label><br>
+            <span>部门：</span><input type="text" class="style"><br>
+            <span>职位：</span><input type="text" class="style"><br>
+            <span>手机：</span><input type="tel" min="11" max="11" pattern="[1][0-9]{10}" class="style"><br>
+            <span style="margin-left: -31px">出生日期：</span>
+            <select onchange="setDays()"></select>
+            <span>年</span>
+            <select onchange="setDays()"></select>
+            <span>月</span><select></select><span>日</span><br>
+            <span style="margin-left: -31px">家庭住址：</span><input type="text" class="style"><br>
+            <span style="margin-left: -31px">电子邮箱：</span><input type="email" class="style"><br>
+            <button id="btn">提交</button>
+            </div>
+    </div>
+</template>
+
+<!--人员管理-->
+<template id="manage">
+    <div>
+        <h3>人员管理</h3>
+    </div>
+</template>
+
+<!--签到-->
+<template id="sign">
+    <div>
+        <h3>签到</h3>
+    </div>
+</template>
+
+<!--考勤管理-->
+<template id="check">
+    <div>
+        <h3>考勤管理</h3>
+    </div>
+</template>
+
+<!--公告-->
+<template id="notice">
+    <div>
+        <h3>公告</h3>
+    </div>
+</template>
+
+<!--系统设置-->
+<template id="set">
+    <div>
+        <h3>系统设置</h3>
+    </div>
+</template>
+<script>
+    const Home={template:'#home'};
+    const Add={template:'#add'};
+    const Manage={template:'#manage'};
+    const Sign={template:'#sign'};
+    const Check={template:'#check'};
+    const Notice={template:'#notice'};
+    const Set={template:'#set'};
+
+    const routes=[
+        {path:'/home',component:Home},
+        {path:'/add',component:Add},
+        {path:'/manage',component:Manage},
+        {path:'/sign',component:Sign},
+        {path:'/check',component:Check},
+        {path:'/notice',component:Notice},
+        {path:'/set',component:Set},
+        {path:"*",redirect:"/home"}
+    ];
+
+    const router= new VueRouter({
+        routes:routes
+    })
+
+    new Vue({
+        router:router
+    }).$mount('#app')
+
+
+    setInterval("webjx.innerHTML=new Date().toLocaleString()+'--'+'星期'+'日一二三四五六'.charAt(new Date().getDay());",1000);
+
+    var btn=document.getElementById("btn");
+    btn.onclick=function () {
+        var name=document.getElementById("name").value;
+        console.log(name);
+
+    }
+</script>
+</body>
+</html>

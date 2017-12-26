@@ -1,0 +1,106 @@
+*{
+    margin: 0;
+    padding: 0;
+    border: 0;
+    list-style: none;
+    text-decoration: none;
+}
+
+.box{
+    width: 100%;
+    height: 600px;
+}
+.le{
+    width: 20%;
+    height: 600px;
+    background-color: #313848;
+    float: left;
+}
+.title{
+    width: 100%;
+    height: 80px;
+    background-color: #ee5e01;
+    color: white;
+    font-size: 18px;
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+    padding-left: 30px;
+    box-sizing: border-box;
+}
+.icon-icon3{
+    color: white;
+    font-weight: 100;
+    margin-right: 10px;
+    font-size: 60px !important;
+}
+.content{
+    width: 80%;
+    height: 600px;
+    float: left;
+    background-color: #c7c7c7;
+}
+.nav{
+    color: #969aa3;
+    width: 260px;
+    height: 60px;
+    float: left;
+}
+.add{
+    font-size: 30px !important;
+    margin-right: 10px;
+}
+.nav{
+    display: flex;
+    align-items: center;
+    padding-left: 30px;
+    box-sizing: border-box;
+    color: white;
+}
+
+#webjx{
+    color: white;
+    text-align: center;
+    margin-left: 10px;
+    box-sizing: border-box;
+    line-height: 50px;
+}
+.td{
+   padding-top: 40px;
+}
+.dd{
+    height: 600px;
+    background-color: white;
+}
+header{
+    width: 100%;
+    height: 60px;
+    border-bottom: 2px solid #c7c7c7;
+    font-weight: bold;
+    font-size: 18px;
+    line-height: 60px;
+    padding-left: 30px;
+    box-sizing: border-box;
+}
+.message{
+    width: 100%;
+    height: 538px;
+    line-height: 40px;
+    padding: 4% 0 0 30%;
+    box-sizing: border-box;
+}
+select{
+    width: 100px;
+    height: 20px;
+    border: 1px solid #c7c7c7;
+}
+.style{
+    border: 1px solid #c7c7c7;
+}
+#btn{
+    width: 100px;
+    background-color: #00b3ee;
+    color: white;
+    height: 30px;
+    margin:6% 0 0 10%;
+}
